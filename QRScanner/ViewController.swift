@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
         performAllowAction()
         setupCameraView()
     }
@@ -110,6 +110,11 @@ class ViewController: UIViewController {
     
     func stopScanning(){
         captureSession?.stopRunning()
+    }
+    
+    @IBAction func scanAgain(_ sender: UIButton) {
+        startScanning()
+        codeLabel.text = ""
     }
     
 }
